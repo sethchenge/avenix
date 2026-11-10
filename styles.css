@@ -1,4 +1,4 @@
-/* Avenix styles.css v5 (whole site) – blue-led, white surfaces, deep-black text, night-sky footer, serif pages, neumorphic contact */
+/* Avenix styles.css v6 (whole site) – blue-led, white surfaces, deep-black text, night-sky footer, serif pages, neumorphic contact */
 :root{--blue:#2447A8;--sky:#4BA8DF;--ink:#0E0F12;--orange:#EC6608;--muted:#4a5062;--soft:#F4F7FD;--line:#DCE3F1;--r:10px;--nav-h:76px;
 --bd:var(--ink) var(--blue) var(--blue) var(--ink);--bd2:var(--blue) var(--ink) var(--ink) var(--blue)}
 html{scroll-behavior:smooth;font-size:16px;scroll-padding-top:92px;overflow-x:hidden;overscroll-behavior-x:none;max-width:100%}
@@ -22,7 +22,7 @@ p{color:var(--muted);max-width:66ch}a{color:var(--blue);text-decoration:none}
 #mainNav.scrolled{border-bottom-color:var(--blue)}
 #mainNav>.container{display:flex;align-items:center;height:100%}
 .navbar-brand{display:flex;align-items:center;flex:1 1 0;margin:0}
-.brand-logo{height:5rem;width:auto;max-width:400px;object-fit:contain}
+.brand-logo{height:3rem;width:auto;max-width:200px;object-fit:contain}
 .nav-end{flex:1 1 0;justify-content:flex-end}
 .navbar-toggler{border:2px solid var(--ink);border-radius:999px;padding:.35rem .6rem;color:var(--ink);background:#fff}
 .navbar-toggler:focus{box-shadow:0 0 0 3px rgba(75,168,223,.45)}
@@ -103,9 +103,11 @@ p{color:var(--muted);max-width:66ch}a{color:var(--blue);text-decoration:none}
 .app-shot img{display:block;width:100%;height:auto}
 .app-shot:not(.has){aspect-ratio:9/19.5;display:grid;place-items:center;border:2px dashed var(--line);border-radius:var(--r);color:var(--muted);font-weight:600;text-align:center;padding:1rem}
 .app-shot:not(.has)::before{content:attr(data-label)}
-.tag{display:inline-block;font-size:.82rem;font-weight:600;padding:.2rem .75rem;border:2px solid;border-color:var(--bd);border-radius:999px;margin:0 .35rem .35rem 0;color:var(--ink)}
+.tag{display:inline-flex;align-items:center;font-size:.82rem;font-weight:600;padding:.2rem .75rem;border:2px solid;border-color:var(--bd);border-radius:999px;margin:0 .35rem .35rem 0;color:var(--ink)}
 .modal-content.bx{padding:.4rem}.modal-header{border:0}.modal-body .form-control{border:2px solid var(--ink);border-radius:999px;padding:.7rem 1.1rem}
 #payMsg{min-height:1.5rem}#payMsg.err{color:#b3261e}#payMsg.ok{color:#1b6b3a}
+
+.tag img{height:16px;width:auto;margin-right:.4rem}
 
 /* Steps */
 .steps{list-style:none;counter-reset:s;padding:0;margin:1rem 0}
