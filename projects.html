@@ -145,7 +145,7 @@
 
 	<!-- =====================================================
 	     STRUCTURED DATA (JSON-LD) - helps Google understand the page
-	     Contains: Organization, WebSite, CollectionPage, Breadcrumbs,
+	     Contains: Organization, WebSite, CollectionPage, Breadcrumbs (Home > Projects),
 	     and a detailed list of all 6 projects (each with its own type)
 	     If you add a project on the page, add it here too.
 	     ===================================================== -->
@@ -153,56 +153,98 @@
 	{
 		"@context": "https://schema.org",
 		"@graph": [
-
 			{
 				"@type": "Organization",
 				"@id": "https://avenix.co.ke/#org",
 				"name": "Avenix",
+				"alternateName": [
+					"Avenix Kenya",
+					"Avenix Nairobi"
+				],
 				"url": "https://avenix.co.ke/",
-				"logo": "https://avenix.co.ke/assets/img/logo.png",
+				"logo": {
+					"@type": "ImageObject",
+					"url": "https://avenix.co.ke/assets/img/logo.png"
+				},
+				"image": "https://avenix.co.ke/assets/img/og-image.jpg",
+				"description": "Avenix is a technology company in Nairobi, Kenya that installs operating systems, builds computer labs, repairs machines, teaches Arduino robotics, builds IoT and networks, supplies hardware, and develops websites and software.",
 				"email": "chengeseth25@gmail.com",
 				"telephone": "+254721156350",
+				"address": {
+					"@type": "PostalAddress",
+					"addressLocality": "Nairobi",
+					"addressRegion": "Nairobi County",
+					"addressCountry": "KE"
+				},
 				"contactPoint": {
 					"@type": "ContactPoint",
 					"telephone": "+254721156350",
+					"email": "chengeseth25@gmail.com",
 					"contactType": "customer service",
 					"areaServed": "KE",
-					"availableLanguage": ["en", "sw"]
+					"availableLanguage": [
+						"en",
+						"sw"
+					]
 				},
-				"sameAs": ["https://wa.me/254721156350"],
+				"sameAs": [
+					"https://wa.me/254721156350"
+				],
 				"foundingDate": "2026",
-				"founder": { "@id": "https://avenix.co.ke/about.html#seth" },
-				"employee": { "@id": "https://avenix.co.ke/about.html#seth" }
+				"founder": {
+					"@id": "https://avenix.co.ke/about.html#seth"
+				},
+				"employee": {
+					"@id": "https://avenix.co.ke/about.html#seth"
+				}
 			},
-
 			{
 				"@type": "WebSite",
 				"@id": "https://avenix.co.ke/#site",
 				"url": "https://avenix.co.ke/",
 				"name": "Avenix",
-				"publisher": { "@id": "https://avenix.co.ke/#org" },
+				"alternateName": [
+					"Avenix Kenya",
+					"avenix.co.ke"
+				],
+				"description": "IT, robotics and networking services in Nairobi, Kenya.",
+				"publisher": {
+					"@id": "https://avenix.co.ke/#org"
+				},
 				"inLanguage": "en-KE"
 			},
-
 			{
 				"@type": "CollectionPage",
 				"@id": "https://avenix.co.ke/projects.html#page",
-				"name": "Avenix projects",
+				"name": "Avenix projects | Avenix Kenya",
 				"description": "Projects completed and planned by Avenix in Kenya: school computer installations, school websites, the V Chess app, Arduino robots and an online store.",
 				"url": "https://avenix.co.ke/projects.html",
-				"isPartOf": { "@id": "https://avenix.co.ke/#site" },
-				"about": { "@id": "https://avenix.co.ke/#org" },
-				"author": {
-					"@type": "Person",
-					"name": "Seth Chenge"
+				"isPartOf": {
+					"@id": "https://avenix.co.ke/#site"
 				},
-				"primaryImageOfPage": "https://avenix.co.ke/assets/img/og-image.jpg",
+				"about": {
+					"@id": "https://avenix.co.ke/#org"
+				},
+				"author": {
+					"@id": "https://avenix.co.ke/about.html#seth"
+				},
+				"breadcrumb": {
+					"@id": "https://avenix.co.ke/projects.html#breadcrumb"
+				},
+				"primaryImageOfPage": {
+					"@type": "ImageObject",
+					"url": "https://avenix.co.ke/assets/img/og-image.jpg",
+					"width": 1200,
+					"height": 630
+				},
 				"inLanguage": "en-KE",
-				"mainEntity": { "@id": "https://avenix.co.ke/projects.html#list" }
+				"mainEntity": {
+					"@id": "https://avenix.co.ke/projects.html#list"
+				}
 			},
-
 			{
 				"@type": "BreadcrumbList",
+				"@id": "https://avenix.co.ke/projects.html#breadcrumb",
 				"itemListElement": [
 					{
 						"@type": "ListItem",
@@ -218,14 +260,12 @@
 					}
 				]
 			},
-
 			{
 				"@type": "ItemList",
 				"@id": "https://avenix.co.ke/projects.html#list",
 				"name": "Avenix projects",
 				"numberOfItems": 6,
 				"itemListElement": [
-
 					{
 						"@type": "ListItem",
 						"position": 1,
@@ -237,18 +277,19 @@
 							"description": "A chess app that explains why the engine prefers a move, so players learn to think like Stockfish.",
 							"operatingSystem": "Android",
 							"applicationCategory": "GameApplication",
-							"image": "https://avenix.co.ke/assets/img/project-vchess.jpg",
-							"url": "https://avenix.co.ke/index.html#vchess",
+							"image": "https://avenix.co.ke/vchess.png",
+							"url": "https://avenix.co.ke/#vchess",
 							"offers": {
 								"@type": "Offer",
 								"price": "500",
 								"priceCurrency": "KES",
 								"availability": "https://schema.org/InStock"
 							},
-							"publisher": { "@id": "https://avenix.co.ke/#org" }
+							"publisher": {
+								"@id": "https://avenix.co.ke/#org"
+							}
 						}
 					},
-
 					{
 						"@type": "ListItem",
 						"position": 2,
@@ -259,16 +300,17 @@
 							"name": "Windows 11 installation at Kanjalu Girls Senior School",
 							"description": "Avenix installed Windows 11 and Microsoft Office on all 21 computers at Kanjalu Girls Senior School.",
 							"serviceType": "Operating system installation",
-							"image": "https://avenix.co.ke/assets/img/project-kanjalu.jpg",
+							"image": "https://avenix.co.ke/Windows%2011%20Operating%20System.jpg",
 							"url": "https://avenix.co.ke/projects.html#kanjalu",
-							"provider": { "@id": "https://avenix.co.ke/#org" },
+							"provider": {
+								"@id": "https://avenix.co.ke/#org"
+							},
 							"areaServed": {
 								"@type": "Country",
 								"name": "Kenya"
 							}
 						}
 					},
-
 					{
 						"@type": "ListItem",
 						"position": 3,
@@ -278,13 +320,14 @@
 							"@id": "https://avenix.co.ke/projects.html#kaptebee-site",
 							"name": "Website for Kaptebee School",
 							"description": "A website designed, built and published by Avenix for Kaptebee School.",
-							"image": "https://avenix.co.ke/assets/img/project-kaptebee.jpg",
+							"image": "https://avenix.co.ke/kaptebee.png",
 							"url": "https://sethchenge.github.io/kaptebee-final/",
-							"creator": { "@id": "https://avenix.co.ke/#org" },
+							"creator": {
+								"@id": "https://avenix.co.ke/#org"
+							},
 							"keywords": "website, school, Kenya"
 						}
 					},
-
 					{
 						"@type": "ListItem",
 						"position": 4,
@@ -294,13 +337,14 @@
 							"@id": "https://avenix.co.ke/projects.html#avenix-site",
 							"name": "Avenix website",
 							"description": "The Avenix website: fast, mobile-first and built with HTML5, Bootstrap 5 and GSAP.",
-							"image": "https://avenix.co.ke/assets/img/project-website.jpg",
+							"image": "https://avenix.co.ke/avenix.png",
 							"url": "https://avenix.co.ke/",
-							"creator": { "@id": "https://avenix.co.ke/#org" },
+							"creator": {
+								"@id": "https://avenix.co.ke/#org"
+							},
 							"inLanguage": "en-KE"
 						}
 					},
-
 					{
 						"@type": "ListItem",
 						"position": 5,
@@ -310,13 +354,14 @@
 							"@id": "https://avenix.co.ke/projects.html#robot-build",
 							"name": "Arduino line-following robot",
 							"description": "A starter robot from the Avenix Arduino lessons. It follows a line using two sensors and a motor driver.",
-							"image": "https://avenix.co.ke/assets/img/project-robot.jpg",
+							"image": "https://avenix.co.ke/robotservices.jpg",
 							"url": "https://avenix.co.ke/projects.html#robot",
-							"creator": { "@id": "https://avenix.co.ke/#org" },
+							"creator": {
+								"@id": "https://avenix.co.ke/#org"
+							},
 							"keywords": "Arduino, robotics, line-following robot, C++"
 						}
 					},
-
 					{
 						"@type": "ListItem",
 						"position": 6,
@@ -326,17 +371,17 @@
 							"@id": "https://avenix.co.ke/projects.html#store-plan",
 							"name": "Avenix mini store",
 							"description": "Planned online store for RAM, SSDs and parts, with cart, checkout and pay on delivery.",
-							"image": "https://avenix.co.ke/assets/img/project-store.jpg",
+							"image": "https://avenix.co.ke/ram.jpg",
 							"url": "https://avenix.co.ke/projects.html#store",
-							"creator": { "@id": "https://avenix.co.ke/#org" },
+							"creator": {
+								"@id": "https://avenix.co.ke/#org"
+							},
 							"creativeWorkStatus": "Planned",
 							"keywords": "e-commerce, RAM, hardware"
 						}
 					}
-
 				]
 			}
-
 		]
 	}
 	</script>

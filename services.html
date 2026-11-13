@@ -90,6 +90,7 @@
 	>
 	<meta property="og:url" content="https://avenix.co.ke/services.html">
 	<meta property="og:image" content="https://avenix.co.ke/assets/img/og-image.jpg">
+	<meta property="og:image:type" content="image/jpeg">
 	<meta property="og:image:width" content="1200">
 	<meta property="og:image:height" content="630">
 	<meta property="og:image:alt" content="Avenix: OS installation, computer labs, robotics and networking in Kenya">
@@ -133,34 +134,96 @@
 
 	<!-- =====================================================
 	     STRUCTURED DATA (JSON-LD) - helps Google understand the page
-	     Contains: Organization, Breadcrumbs, Services list (with prices), FAQ
+	     Contains: Organization, WebSite, CollectionPage, Breadcrumbs
+	     (Home > Services), Services list (with starting prices), FAQ
 	     If you change a price or FAQ answer on the page, change it here too
 	     ===================================================== -->
 	<script type="application/ld+json">
 	{
 		"@context": "https://schema.org",
 		"@graph": [
-
 			{
 				"@type": "Organization",
 				"@id": "https://avenix.co.ke/#org",
 				"name": "Avenix",
+				"alternateName": [
+					"Avenix Kenya",
+					"Avenix Nairobi"
+				],
 				"url": "https://avenix.co.ke/",
-				"logo": "https://avenix.co.ke/assets/img/logo.png",
+				"logo": {
+					"@type": "ImageObject",
+					"url": "https://avenix.co.ke/assets/img/logo.png"
+				},
+				"image": "https://avenix.co.ke/assets/img/og-image.jpg",
+				"description": "Avenix is a small team in Nairobi, Kenya that installs operating systems, builds computer labs, repairs machines, teaches Arduino robotics, builds IoT and networks, supplies RAM and hardware, and develops websites and software.",
 				"email": "chengeseth25@gmail.com",
 				"telephone": "+254721156350",
+				"address": {
+					"@type": "PostalAddress",
+					"addressLocality": "Nairobi",
+					"addressRegion": "Nairobi County",
+					"addressCountry": "KE"
+				},
 				"contactPoint": {
 					"@type": "ContactPoint",
 					"telephone": "+254721156350",
+					"email": "chengeseth25@gmail.com",
 					"contactType": "customer service",
 					"areaServed": "KE",
-					"availableLanguage": ["en", "sw"]
+					"availableLanguage": [
+						"en",
+						"sw"
+					]
 				},
-				"sameAs": ["https://wa.me/254721156350"]
+				"sameAs": [
+					"https://wa.me/254721156350"
+				]
 			},
-
+			{
+				"@type": "WebSite",
+				"@id": "https://avenix.co.ke/#site",
+				"url": "https://avenix.co.ke/",
+				"name": "Avenix",
+				"alternateName": [
+					"Avenix Kenya",
+					"avenix.co.ke"
+				],
+				"description": "IT, robotics and networking services in Nairobi, Kenya.",
+				"publisher": {
+					"@id": "https://avenix.co.ke/#org"
+				},
+				"inLanguage": "en-KE"
+			},
+			{
+				"@type": "CollectionPage",
+				"@id": "https://avenix.co.ke/services.html#page",
+				"url": "https://avenix.co.ke/services.html",
+				"name": "Services & Prices | Avenix Kenya",
+				"description": "See Avenix services and prices in KSh and USD: OS installations, computer lab setup, machine repair, Arduino robotics, IoT, networking, RAM supply and web development in Kenya.",
+				"isPartOf": {
+					"@id": "https://avenix.co.ke/#site"
+				},
+				"about": {
+					"@id": "https://avenix.co.ke/#org"
+				},
+				"breadcrumb": {
+					"@id": "https://avenix.co.ke/services.html#breadcrumb"
+				},
+				"mainEntity": {
+					"@id": "https://avenix.co.ke/services.html#list"
+				},
+				"primaryImageOfPage": {
+					"@type": "ImageObject",
+					"url": "https://avenix.co.ke/assets/img/og-image.jpg",
+					"width": 1200,
+					"height": 630
+				},
+				"inLanguage": "en-KE"
+			},
 			{
 				"@type": "BreadcrumbList",
+				"@id": "https://avenix.co.ke/services.html#breadcrumb",
 				"itemListElement": [
 					{
 						"@type": "ListItem",
@@ -176,163 +239,306 @@
 					}
 				]
 			},
-
 			{
 				"@type": "ItemList",
+				"@id": "https://avenix.co.ke/services.html#list",
 				"name": "Avenix services",
+				"numberOfItems": 8,
 				"itemListElement": [
-
 					{
 						"@type": "ListItem",
 						"position": 1,
 						"item": {
 							"@type": "Service",
+							"@id": "https://avenix.co.ke/services.html#os-service",
 							"name": "OS installations",
+							"serviceType": "Operating system installation",
 							"description": "Windows, Ubuntu, Kali and more, set up and ready to use.",
-							"provider": { "@id": "https://avenix.co.ke/#org" },
-							"areaServed": "KE",
 							"url": "https://avenix.co.ke/services.html#os",
+							"image": "https://avenix.co.ke/Windows%2011%20Operating%20System.jpg",
+							"provider": {
+								"@id": "https://avenix.co.ke/#org"
+							},
+							"areaServed": {
+								"@type": "Country",
+								"name": "Kenya"
+							},
 							"offers": {
 								"@type": "Offer",
+								"url": "https://avenix.co.ke/services.html#os",
 								"priceCurrency": "KES",
-								"price": "1500"
+								"price": "1500",
+								"priceSpecification": {
+									"@type": "PriceSpecification",
+									"priceCurrency": "KES",
+									"minPrice": 1500,
+									"unitText": "per machine"
+								},
+								"availability": "https://schema.org/InStock",
+								"seller": {
+									"@id": "https://avenix.co.ke/#org"
+								}
 							}
 						}
 					},
-
 					{
 						"@type": "ListItem",
 						"position": 2,
 						"item": {
 							"@type": "Service",
+							"@id": "https://avenix.co.ke/services.html#lab-service",
 							"name": "Computer lab setup",
+							"serviceType": "Computer lab setup",
 							"description": "Schools, colleges and offices: planned, cabled and ready to teach in.",
-							"provider": { "@id": "https://avenix.co.ke/#org" },
-							"areaServed": "KE",
 							"url": "https://avenix.co.ke/services.html#lab",
+							"image": "https://avenix.co.ke/Computer%20Lab.jpg",
+							"provider": {
+								"@id": "https://avenix.co.ke/#org"
+							},
+							"areaServed": {
+								"@type": "Country",
+								"name": "Kenya"
+							},
 							"offers": {
 								"@type": "Offer",
+								"url": "https://avenix.co.ke/services.html#lab",
 								"priceCurrency": "KES",
-								"price": "25000"
+								"price": "25000",
+								"priceSpecification": {
+									"@type": "PriceSpecification",
+									"priceCurrency": "KES",
+									"minPrice": 25000,
+									"unitText": "small lab"
+								},
+								"availability": "https://schema.org/InStock",
+								"seller": {
+									"@id": "https://avenix.co.ke/#org"
+								}
 							}
 						}
 					},
-
 					{
 						"@type": "ListItem",
 						"position": 3,
 						"item": {
 							"@type": "Service",
+							"@id": "https://avenix.co.ke/services.html#maintenance-service",
 							"name": "Machine maintenance and repair",
+							"serviceType": "Computer repair and maintenance",
 							"description": "Cleaning, upgrades and repairs for laptops and desktops.",
-							"provider": { "@id": "https://avenix.co.ke/#org" },
-							"areaServed": "KE",
 							"url": "https://avenix.co.ke/services.html#maintenance",
+							"image": "https://avenix.co.ke/Computer%20maintenance%20and%20repair.jpg",
+							"provider": {
+								"@id": "https://avenix.co.ke/#org"
+							},
+							"areaServed": {
+								"@type": "Country",
+								"name": "Kenya"
+							},
 							"offers": {
 								"@type": "Offer",
+								"url": "https://avenix.co.ke/services.html#maintenance",
 								"priceCurrency": "KES",
-								"price": "1000"
+								"price": "1000",
+								"priceSpecification": {
+									"@type": "PriceSpecification",
+									"priceCurrency": "KES",
+									"minPrice": 1000,
+									"unitText": "service"
+								},
+								"availability": "https://schema.org/InStock",
+								"seller": {
+									"@id": "https://avenix.co.ke/#org"
+								}
 							}
 						}
 					},
-
 					{
 						"@type": "ListItem",
 						"position": 4,
 						"item": {
 							"@type": "Service",
+							"@id": "https://avenix.co.ke/services.html#robotics-service",
 							"name": "Robotics and Arduino",
+							"serviceType": "Arduino and robotics training",
 							"description": "Hands-on Arduino lessons and robot builds for students and clubs.",
-							"provider": { "@id": "https://avenix.co.ke/#org" },
-							"areaServed": "KE",
 							"url": "https://avenix.co.ke/services.html#robotics",
+							"image": "https://avenix.co.ke/robotservices.jpg",
+							"provider": {
+								"@id": "https://avenix.co.ke/#org"
+							},
+							"areaServed": {
+								"@type": "Country",
+								"name": "Kenya"
+							},
 							"offers": {
 								"@type": "Offer",
+								"url": "https://avenix.co.ke/services.html#robotics",
 								"priceCurrency": "KES",
-								"price": "3500"
+								"price": "3500",
+								"priceSpecification": {
+									"@type": "PriceSpecification",
+									"priceCurrency": "KES",
+									"minPrice": 3500,
+									"unitText": "per session"
+								},
+								"availability": "https://schema.org/InStock",
+								"seller": {
+									"@id": "https://avenix.co.ke/#org"
+								}
 							}
 						}
 					},
-
 					{
 						"@type": "ListItem",
 						"position": 5,
 						"item": {
 							"@type": "Service",
+							"@id": "https://avenix.co.ke/services.html#iot-service",
 							"name": "IoT solutions",
+							"serviceType": "IoT solution development",
 							"description": "Sensors and smart controls for farms, homes and businesses.",
-							"provider": { "@id": "https://avenix.co.ke/#org" },
-							"areaServed": "KE",
 							"url": "https://avenix.co.ke/services.html#iot",
+							"image": "https://avenix.co.ke/iotserives.jpg",
+							"provider": {
+								"@id": "https://avenix.co.ke/#org"
+							},
+							"areaServed": {
+								"@type": "Country",
+								"name": "Kenya"
+							},
 							"offers": {
 								"@type": "Offer",
+								"url": "https://avenix.co.ke/services.html#iot",
 								"priceCurrency": "KES",
-								"price": "8000"
+								"price": "8000",
+								"priceSpecification": {
+									"@type": "PriceSpecification",
+									"priceCurrency": "KES",
+									"minPrice": 8000,
+									"unitText": "per project"
+								},
+								"availability": "https://schema.org/InStock",
+								"seller": {
+									"@id": "https://avenix.co.ke/#org"
+								}
 							}
 						}
 					},
-
 					{
 						"@type": "ListItem",
 						"position": 6,
 						"item": {
 							"@type": "Service",
+							"@id": "https://avenix.co.ke/services.html#networking-service",
 							"name": "Networking",
+							"serviceType": "Computer network installation",
 							"description": "Wi-Fi, cabling and office networks that stay up.",
-							"provider": { "@id": "https://avenix.co.ke/#org" },
-							"areaServed": "KE",
 							"url": "https://avenix.co.ke/services.html#networking",
+							"image": "https://avenix.co.ke/computer%20networking.jpg",
+							"provider": {
+								"@id": "https://avenix.co.ke/#org"
+							},
+							"areaServed": {
+								"@type": "Country",
+								"name": "Kenya"
+							},
 							"offers": {
 								"@type": "Offer",
+								"url": "https://avenix.co.ke/services.html#networking",
 								"priceCurrency": "KES",
-								"price": "6000"
+								"price": "6000",
+								"priceSpecification": {
+									"@type": "PriceSpecification",
+									"priceCurrency": "KES",
+									"minPrice": 6000,
+									"unitText": "per job"
+								},
+								"availability": "https://schema.org/InStock",
+								"seller": {
+									"@id": "https://avenix.co.ke/#org"
+								}
 							}
 						}
 					},
-
 					{
 						"@type": "ListItem",
 						"position": 7,
 						"item": {
 							"@type": "Service",
+							"@id": "https://avenix.co.ke/services.html#hardware-service",
 							"name": "RAM and hardware supply",
+							"serviceType": "Computer hardware supply and fitting",
 							"description": "RAM, SSDs and parts that match your machine, fitted for you.",
-							"provider": { "@id": "https://avenix.co.ke/#org" },
-							"areaServed": "KE",
 							"url": "https://avenix.co.ke/services.html#hardware",
+							"image": "https://avenix.co.ke/ram.jpg",
+							"provider": {
+								"@id": "https://avenix.co.ke/#org"
+							},
+							"areaServed": {
+								"@type": "Country",
+								"name": "Kenya"
+							},
 							"offers": {
 								"@type": "Offer",
+								"url": "https://avenix.co.ke/services.html#hardware",
 								"priceCurrency": "KES",
-								"price": "2500"
+								"price": "2500",
+								"priceSpecification": {
+									"@type": "PriceSpecification",
+									"priceCurrency": "KES",
+									"minPrice": 2500,
+									"unitText": "per RAM stick"
+								},
+								"availability": "https://schema.org/InStock",
+								"seller": {
+									"@id": "https://avenix.co.ke/#org"
+								}
 							}
 						}
 					},
-
 					{
 						"@type": "ListItem",
 						"position": 8,
 						"item": {
 							"@type": "Service",
+							"@id": "https://avenix.co.ke/services.html#web-service",
 							"name": "Website and software development",
+							"serviceType": "Website and software development",
 							"description": "Websites and custom apps for your business.",
-							"provider": { "@id": "https://avenix.co.ke/#org" },
-							"areaServed": "KE",
 							"url": "https://avenix.co.ke/services.html#web",
+							"image": "https://avenix.co.ke/softwaredevelopment.jpg",
+							"provider": {
+								"@id": "https://avenix.co.ke/#org"
+							},
+							"areaServed": {
+								"@type": "Country",
+								"name": "Kenya"
+							},
 							"offers": {
 								"@type": "Offer",
+								"url": "https://avenix.co.ke/services.html#web",
 								"priceCurrency": "KES",
-								"price": "25000"
+								"price": "25000",
+								"priceSpecification": {
+									"@type": "PriceSpecification",
+									"priceCurrency": "KES",
+									"minPrice": 25000,
+									"unitText": "per project"
+								},
+								"availability": "https://schema.org/InStock",
+								"seller": {
+									"@id": "https://avenix.co.ke/#org"
+								}
 							}
 						}
 					}
-
 				]
 			},
-
 			{
 				"@type": "FAQPage",
+				"@id": "https://avenix.co.ke/services.html#faq",
 				"mainEntity": [
-
 					{
 						"@type": "Question",
 						"name": "How much does an OS installation cost in Kenya?",
@@ -341,7 +547,6 @@
 							"text": "Our installs start from KSh 1,500 per machine. The final price depends on the system, the apps you need and whether we back up your files."
 						}
 					},
-
 					{
 						"@type": "Question",
 						"name": "Can you set up a computer lab for my school?",
@@ -350,7 +555,6 @@
 							"text": "Yes. Message us with the location and the number of computers and we will tell you what is possible and give you a price."
 						}
 					},
-
 					{
 						"@type": "Question",
 						"name": "Do you supply RAM for laptops and desktops?",
@@ -359,7 +563,6 @@
 							"text": "Yes. Send us your model and we check the right type (DDR3, DDR4 or DDR5), then supply and fit it. An online shop with delivery is coming soon."
 						}
 					},
-
 					{
 						"@type": "Question",
 						"name": "Can I see prices in dollars?",
@@ -368,10 +571,8 @@
 							"text": "Yes. Use the KSh and USD switch at the top of this page and every price converts at once."
 						}
 					}
-
 				]
 			}
-
 		]
 	}
 	</script>

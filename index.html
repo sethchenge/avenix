@@ -90,6 +90,7 @@
 	>
 	<meta property="og:url" content="https://avenix.co.ke/">
 	<meta property="og:image" content="https://avenix.co.ke/assets/img/og-image.jpg">
+	<meta property="og:image:type" content="image/jpeg">
 	<meta property="og:image:width" content="1200">
 	<meta property="og:image:height" content="630">
 	<meta property="og:image:alt" content="Avenix: OS installation, computer labs, robotics and networking in Kenya">
@@ -136,6 +137,12 @@
 
 	<!-- =====================================================
 	     STRUCTURED DATA (JSON-LD) - helps Google understand the business
+	     Includes:
+	       - Organization + LocalBusiness (with the list of services)
+	       - WebSite (with alternate names for the site name in results)
+	       - WebPage + BreadcrumbList (breadcrumb trail for this page)
+	       - Site navigation links (helps Google show sitelinks)
+	       - SoftwareApplication (V Chess)
 	     ===================================================== -->
 	<script type="application/ld+json">
 	{
@@ -146,13 +153,26 @@
 				"@type": "Organization",
 				"@id": "https://avenix.co.ke/#org",
 				"name": "Avenix",
+				"alternateName": ["Avenix Kenya", "Avenix Nairobi"],
 				"url": "https://avenix.co.ke/",
-				"logo": "https://avenix.co.ke/assets/img/logo.png",
+				"logo": {
+					"@type": "ImageObject",
+					"url": "https://avenix.co.ke/assets/img/logo.png"
+				},
+				"image": "https://avenix.co.ke/assets/img/og-image.jpg",
+				"description": "Avenix is a small team in Nairobi, Kenya that installs operating systems, builds computer labs, repairs machines, teaches Arduino robotics, builds IoT and networks, supplies RAM and hardware, and develops websites and software.",
 				"email": "chengeseth25@gmail.com",
 				"telephone": "+254721156350",
+				"address": {
+					"@type": "PostalAddress",
+					"addressLocality": "Nairobi",
+					"addressRegion": "Nairobi County",
+					"addressCountry": "KE"
+				},
 				"contactPoint": {
 					"@type": "ContactPoint",
 					"telephone": "+254721156350",
+					"email": "chengeseth25@gmail.com",
 					"contactType": "customer service",
 					"areaServed": "KE",
 					"availableLanguage": ["en", "sw"]
@@ -164,19 +184,121 @@
 				"@type": "LocalBusiness",
 				"@id": "https://avenix.co.ke/#local",
 				"name": "Avenix",
+				"alternateName": "Avenix Kenya",
 				"url": "https://avenix.co.ke/",
 				"image": "https://avenix.co.ke/assets/img/og-image.jpg",
+				"logo": "https://avenix.co.ke/assets/img/logo.png",
+				"description": "OS installation, computer lab setup, machine repair, Arduino robotics training, IoT solutions, networking, RAM and hardware supply, and website development in Nairobi, Kenya.",
 				"telephone": "+254721156350",
 				"email": "chengeseth25@gmail.com",
 				"priceRange": "KSh 500 - KSh 25,000",
+				"currenciesAccepted": "KES",
+				"paymentAccepted": "M-Pesa",
 				"address": {
 					"@type": "PostalAddress",
 					"addressLocality": "Nairobi",
+					"addressRegion": "Nairobi County",
 					"addressCountry": "KE"
+				},
+				"geo": {
+					"@type": "GeoCoordinates",
+					"latitude": -1.286389,
+					"longitude": 36.817223
 				},
 				"areaServed": {
 					"@type": "Country",
 					"name": "Kenya"
+				},
+				"parentOrganization": { "@id": "https://avenix.co.ke/#org" },
+				"knowsAbout": [
+					"Operating system installation",
+					"Windows",
+					"Linux",
+					"Computer lab setup",
+					"Computer repair",
+					"Arduino",
+					"Robotics",
+					"Internet of Things",
+					"Computer networking",
+					"Web development"
+				],
+				"hasOfferCatalog": {
+					"@type": "OfferCatalog",
+					"name": "Avenix services",
+					"itemListElement": [
+						{
+							"@type": "Offer",
+							"itemOffered": {
+								"@type": "Service",
+								"name": "OS installations",
+								"url": "https://avenix.co.ke/services.html#os",
+								"description": "Windows, Ubuntu, Kali and other operating systems set up and ready to use."
+							}
+						},
+						{
+							"@type": "Offer",
+							"itemOffered": {
+								"@type": "Service",
+								"name": "Computer lab setup",
+								"url": "https://avenix.co.ke/services.html#lab",
+								"description": "Computer labs for schools, colleges and offices: planned, cabled and ready to teach in."
+							}
+						},
+						{
+							"@type": "Offer",
+							"itemOffered": {
+								"@type": "Service",
+								"name": "Machine maintenance and repair",
+								"url": "https://avenix.co.ke/services.html#maintenance",
+								"description": "Cleaning, upgrades and repairs for laptops and desktops."
+							}
+						},
+						{
+							"@type": "Offer",
+							"itemOffered": {
+								"@type": "Service",
+								"name": "Robotics and Arduino",
+								"url": "https://avenix.co.ke/services.html#robotics",
+								"description": "Hands-on Arduino lessons and robot builds for students and clubs."
+							}
+						},
+						{
+							"@type": "Offer",
+							"itemOffered": {
+								"@type": "Service",
+								"name": "IoT solutions",
+								"url": "https://avenix.co.ke/services.html#iot",
+								"description": "Sensors and smart controls for farms, homes and businesses."
+							}
+						},
+						{
+							"@type": "Offer",
+							"itemOffered": {
+								"@type": "Service",
+								"name": "Networking",
+								"url": "https://avenix.co.ke/services.html#networking",
+								"description": "Wi-Fi, cabling and office networks that stay up."
+							}
+						},
+						{
+							"@type": "Offer",
+							"itemOffered": {
+								"@type": "Service",
+								"name": "RAM and hardware supply",
+								"url": "https://avenix.co.ke/services.html#hardware",
+								"description": "RAM, SSDs and parts that match your machine, fitted for you."
+							}
+						},
+						{
+							"@type": "Offer",
+							"itemOffered": {
+								"@type": "Service",
+								"name": "Website and software development",
+								"url": "https://avenix.co.ke/services.html#web",
+								"description": "Websites and custom apps for your business."
+							}
+						}
+					]
 				}
 			},
 
@@ -185,6 +307,8 @@
 				"@id": "https://avenix.co.ke/#site",
 				"url": "https://avenix.co.ke/",
 				"name": "Avenix",
+				"alternateName": ["Avenix Kenya", "avenix.co.ke"],
+				"description": "IT, robotics and networking services in Nairobi, Kenya.",
 				"publisher": { "@id": "https://avenix.co.ke/#org" },
 				"inLanguage": "en-KE"
 			},
@@ -194,21 +318,78 @@
 				"@id": "https://avenix.co.ke/#page",
 				"url": "https://avenix.co.ke/",
 				"name": "Avenix | IT, Robotics and Networking in Kenya",
+				"description": "Avenix installs operating systems, sets up computer labs, repairs machines, teaches Arduino robotics, builds IoT and networks, and supplies RAM in Nairobi, Kenya.",
 				"isPartOf": { "@id": "https://avenix.co.ke/#site" },
 				"about": { "@id": "https://avenix.co.ke/#org" },
+				"breadcrumb": { "@id": "https://avenix.co.ke/#breadcrumb" },
+				"primaryImageOfPage": {
+					"@type": "ImageObject",
+					"url": "https://avenix.co.ke/assets/img/og-image.jpg",
+					"width": 1200,
+					"height": 630
+				},
 				"inLanguage": "en-KE"
 			},
 
 			{
+				"@type": "BreadcrumbList",
+				"@id": "https://avenix.co.ke/#breadcrumb",
+				"itemListElement": [
+					{
+						"@type": "ListItem",
+						"position": 1,
+						"name": "Home",
+						"item": "https://avenix.co.ke/"
+					}
+				]
+			},
+
+			{
+				"@type": "ItemList",
+				"@id": "https://avenix.co.ke/#nav",
+				"name": "Avenix site navigation",
+				"itemListElement": [
+					{
+						"@type": "SiteNavigationElement",
+						"position": 1,
+						"name": "Services",
+						"url": "https://avenix.co.ke/services.html"
+					},
+					{
+						"@type": "SiteNavigationElement",
+						"position": 2,
+						"name": "Projects",
+						"url": "https://avenix.co.ke/projects.html"
+					},
+					{
+						"@type": "SiteNavigationElement",
+						"position": 3,
+						"name": "About",
+						"url": "https://avenix.co.ke/about.html"
+					},
+					{
+						"@type": "SiteNavigationElement",
+						"position": 4,
+						"name": "Contact",
+						"url": "https://avenix.co.ke/contact.html"
+					}
+				]
+			},
+
+			{
 				"@type": "SoftwareApplication",
+				"@id": "https://avenix.co.ke/#vchess",
 				"name": "V Chess",
+				"url": "https://avenix.co.ke/#vchess",
+				"image": "https://avenix.co.ke/vchess.jpg",
 				"description": "A chess app that explains why the engine prefers a move, so players learn to think like Stockfish.",
 				"operatingSystem": "Android",
 				"applicationCategory": "GameApplication",
 				"offers": {
 					"@type": "Offer",
 					"price": "500",
-					"priceCurrency": "KES"
+					"priceCurrency": "KES",
+					"availability": "https://schema.org/InStock"
 				},
 				"publisher": { "@id": "https://avenix.co.ke/#org" }
 			}

@@ -90,6 +90,7 @@
 	>
 	<meta property="og:url" content="https://avenix.co.ke/contact.html">
 	<meta property="og:image" content="https://avenix.co.ke/assets/img/og-image.jpg">
+	<meta property="og:image:type" content="image/jpeg">
 	<meta property="og:image:width" content="1200">
 	<meta property="og:image:height" content="630">
 	<meta property="og:image:alt" content="Avenix: OS installation, computer labs, robotics and networking in Kenya">
@@ -133,64 +134,160 @@
 
 	<!-- =====================================================
 	     STRUCTURED DATA (JSON-LD) - helps Google understand the page
-	     Contains: Organization, LocalBusiness, ContactPage, Breadcrumbs
+	     Contains: Organization, LocalBusiness, WebSite, ContactPage, Breadcrumbs (Home > Contact)
 	     ===================================================== -->
 	<script type="application/ld+json">
 	{
 		"@context": "https://schema.org",
 		"@graph": [
-
 			{
 				"@type": "Organization",
 				"@id": "https://avenix.co.ke/#org",
 				"name": "Avenix",
+				"alternateName": [
+					"Avenix Kenya",
+					"Avenix Nairobi"
+				],
 				"url": "https://avenix.co.ke/",
-				"logo": "https://avenix.co.ke/assets/img/logo.png",
+				"logo": {
+					"@type": "ImageObject",
+					"url": "https://avenix.co.ke/assets/img/logo.png"
+				},
+				"image": "https://avenix.co.ke/assets/img/og-image.jpg",
+				"description": "Avenix is a technology company in Nairobi, Kenya that installs operating systems, builds computer labs, repairs machines, teaches Arduino robotics, builds IoT and networks, supplies hardware, and develops websites and software.",
 				"email": "chengeseth25@gmail.com",
 				"telephone": "+254721156350",
-				"contactPoint": {
-					"@type": "ContactPoint",
-					"telephone": "+254721156350",
-					"contactType": "customer service",
-					"areaServed": "KE",
-					"availableLanguage": ["en", "sw"]
+				"address": {
+					"@type": "PostalAddress",
+					"addressLocality": "Nairobi",
+					"addressRegion": "Nairobi County",
+					"addressCountry": "KE"
 				},
-				"sameAs": ["https://wa.me/254721156350"],
+				"contactPoint": [
+					{
+						"@type": "ContactPoint",
+						"telephone": "+254721156350",
+						"email": "chengeseth25@gmail.com",
+						"contactType": "customer service",
+						"areaServed": "KE",
+						"availableLanguage": [
+							"en",
+							"sw"
+						]
+					},
+					{
+						"@type": "ContactPoint",
+						"telephone": "+254721156350",
+						"contactType": "sales",
+						"areaServed": "KE",
+						"availableLanguage": [
+							"en",
+							"sw"
+						]
+					}
+				],
+				"sameAs": [
+					"https://wa.me/254721156350"
+				],
 				"foundingDate": "2026",
-				"founder": { "@id": "https://avenix.co.ke/about.html#seth" },
-				"employee": { "@id": "https://avenix.co.ke/about.html#seth" }
+				"founder": {
+					"@id": "https://avenix.co.ke/about.html#seth"
+				},
+				"employee": {
+					"@id": "https://avenix.co.ke/about.html#seth"
+				}
 			},
-
 			{
 				"@type": "LocalBusiness",
 				"@id": "https://avenix.co.ke/#local",
 				"name": "Avenix",
+				"alternateName": "Avenix Kenya",
 				"url": "https://avenix.co.ke/",
 				"image": "https://avenix.co.ke/assets/img/og-image.jpg",
+				"logo": "https://avenix.co.ke/assets/img/logo.png",
+				"description": "OS installation, computer lab setup, machine repair, Arduino robotics training, IoT solutions, networking, RAM and hardware supply, and website development in Nairobi, Kenya.",
 				"telephone": "+254721156350",
 				"email": "chengeseth25@gmail.com",
 				"priceRange": "KSh 500 - KSh 25,000",
+				"currenciesAccepted": "KES",
+				"paymentAccepted": "M-Pesa",
 				"address": {
 					"@type": "PostalAddress",
 					"addressLocality": "Nairobi",
+					"addressRegion": "Nairobi County",
 					"addressCountry": "KE"
+				},
+				"geo": {
+					"@type": "GeoCoordinates",
+					"latitude": -1.286389,
+					"longitude": 36.817223
 				},
 				"areaServed": {
 					"@type": "Country",
 					"name": "Kenya"
-				}
+				},
+				"parentOrganization": {
+					"@id": "https://avenix.co.ke/#org"
+				},
+				"contactPoint": {
+					"@type": "ContactPoint",
+					"telephone": "+254721156350",
+					"email": "chengeseth25@gmail.com",
+					"contactType": "customer service",
+					"areaServed": "KE",
+					"availableLanguage": [
+						"en",
+						"sw"
+					]
+				},
+				"sameAs": [
+					"https://wa.me/254721156350"
+				]
 			},
-
+			{
+				"@type": "WebSite",
+				"@id": "https://avenix.co.ke/#site",
+				"url": "https://avenix.co.ke/",
+				"name": "Avenix",
+				"alternateName": [
+					"Avenix Kenya",
+					"avenix.co.ke"
+				],
+				"description": "IT, robotics and networking services in Nairobi, Kenya.",
+				"publisher": {
+					"@id": "https://avenix.co.ke/#org"
+				},
+				"inLanguage": "en-KE"
+			},
 			{
 				"@type": "ContactPage",
+				"@id": "https://avenix.co.ke/contact.html#page",
 				"url": "https://avenix.co.ke/contact.html",
-				"name": "Contact Avenix",
-				"isPartOf": { "@id": "https://avenix.co.ke/#site" },
-				"mainEntity": { "@id": "https://avenix.co.ke/#org" }
+				"name": "Contact Avenix | WhatsApp, Email & Nairobi Location",
+				"description": "Contact Avenix in Nairobi, Kenya. Chat on WhatsApp +254 721 156 350, call, email chengeseth25@gmail.com or send a message about OS installs, computer labs, Arduino robotics, networking and RAM.",
+				"isPartOf": {
+					"@id": "https://avenix.co.ke/#site"
+				},
+				"about": {
+					"@id": "https://avenix.co.ke/#org"
+				},
+				"mainEntity": {
+					"@id": "https://avenix.co.ke/#org"
+				},
+				"breadcrumb": {
+					"@id": "https://avenix.co.ke/contact.html#breadcrumb"
+				},
+				"primaryImageOfPage": {
+					"@type": "ImageObject",
+					"url": "https://avenix.co.ke/assets/img/og-image.jpg",
+					"width": 1200,
+					"height": 630
+				},
+				"inLanguage": "en-KE"
 			},
-
 			{
 				"@type": "BreadcrumbList",
+				"@id": "https://avenix.co.ke/contact.html#breadcrumb",
 				"itemListElement": [
 					{
 						"@type": "ListItem",
@@ -206,7 +303,6 @@
 					}
 				]
 			}
-
 		]
 	}
 	</script>

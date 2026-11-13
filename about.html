@@ -90,6 +90,7 @@
 	>
 	<meta property="og:url" content="https://avenix.co.ke/about.html">
 	<meta property="og:image" content="https://avenix.co.ke/assets/img/og-image.jpg">
+	<meta property="og:image:type" content="image/jpeg">
 	<meta property="og:image:width" content="1200">
 	<meta property="og:image:height" content="630">
 	<meta property="og:image:alt" content="Avenix: OS installation, computer labs, robotics and networking in Kenya">
@@ -136,45 +137,94 @@
 
 	<!-- =====================================================
 	     STRUCTURED DATA (JSON-LD) - helps Google understand the page
-	     Contains: Organization, Person (Seth Chenge), ProfilePage, Breadcrumbs
+	     Contains: Organization, WebSite, Person (Seth Chenge), ProfilePage, Breadcrumbs (Home > About)
 	     ===================================================== -->
 	<script type="application/ld+json">
 	{
 		"@context": "https://schema.org",
 		"@graph": [
-
 			{
 				"@type": "Organization",
 				"@id": "https://avenix.co.ke/#org",
 				"name": "Avenix",
+				"alternateName": [
+					"Avenix Kenya",
+					"Avenix Nairobi"
+				],
 				"url": "https://avenix.co.ke/",
-				"logo": "https://avenix.co.ke/assets/img/logo.png",
+				"logo": {
+					"@type": "ImageObject",
+					"url": "https://avenix.co.ke/assets/img/logo.png"
+				},
+				"image": "https://avenix.co.ke/assets/img/og-image.jpg",
+				"description": "Avenix is a technology company in Nairobi, Kenya, founded in 2026 by Seth Chenge. It installs operating systems, builds computer labs, repairs machines, teaches Arduino robotics, builds IoT and networks, supplies hardware, and develops websites and software.",
 				"email": "chengeseth25@gmail.com",
 				"telephone": "+254721156350",
+				"address": {
+					"@type": "PostalAddress",
+					"addressLocality": "Nairobi",
+					"addressRegion": "Nairobi County",
+					"addressCountry": "KE"
+				},
 				"contactPoint": {
 					"@type": "ContactPoint",
 					"telephone": "+254721156350",
+					"email": "chengeseth25@gmail.com",
 					"contactType": "customer service",
 					"areaServed": "KE",
-					"availableLanguage": ["en", "sw"]
+					"availableLanguage": [
+						"en",
+						"sw"
+					]
 				},
-				"sameAs": ["https://wa.me/254721156350"],
+				"sameAs": [
+					"https://wa.me/254721156350"
+				],
 				"foundingDate": "2026",
-				"founder": { "@id": "https://avenix.co.ke/about.html#seth" },
-				"employee": { "@id": "https://avenix.co.ke/about.html#seth" }
+				"foundingLocation": {
+					"@type": "Place",
+					"name": "Nairobi, Kenya"
+				},
+				"founder": {
+					"@id": "https://avenix.co.ke/about.html#seth"
+				},
+				"employee": {
+					"@id": "https://avenix.co.ke/about.html#seth"
+				}
 			},
-
+			{
+				"@type": "WebSite",
+				"@id": "https://avenix.co.ke/#site",
+				"url": "https://avenix.co.ke/",
+				"name": "Avenix",
+				"alternateName": [
+					"Avenix Kenya",
+					"avenix.co.ke"
+				],
+				"description": "IT, robotics and networking services in Nairobi, Kenya.",
+				"publisher": {
+					"@id": "https://avenix.co.ke/#org"
+				},
+				"inLanguage": "en-KE"
+			},
 			{
 				"@type": "Person",
 				"@id": "https://avenix.co.ke/about.html#seth",
 				"name": "Seth Chenge",
-				"alternateName": ["Seth Chenge", "sethchenge", "seth chenge"],
+				"alternateName": [
+					"Seth Chenge",
+					"sethchenge",
+					"seth chenge"
+				],
 				"givenName": "Seth",
 				"familyName": "Chenge",
 				"jobTitle": "Founder and CEO",
 				"description": "Seth Chenge is the founder and CEO of Avenix, a technology company in Nairobi, Kenya, founded in 2026.",
 				"url": "https://avenix.co.ke/about.html",
-				"image": "https://avenix.co.ke/assets/img/seth-chenge.jpg",
+				"image": {
+					"@type": "ImageObject",
+					"url": "https://avenix.co.ke/ceo.png"
+				},
 				"email": "chengeseth25@gmail.com",
 				"address": {
 					"@type": "PostalAddress",
@@ -185,7 +235,12 @@
 					"@type": "Country",
 					"name": "Kenya"
 				},
-				"worksFor": { "@id": "https://avenix.co.ke/#org" },
+				"worksFor": {
+					"@id": "https://avenix.co.ke/#org"
+				},
+				"affiliation": {
+					"@id": "https://avenix.co.ke/#org"
+				},
 				"knowsAbout": [
 					"Linux",
 					"Ubuntu",
@@ -199,21 +254,39 @@
 					"Arduino",
 					"Computer networking"
 				],
-				"sameAs": ["https://wa.me/254721156350"]
+				"sameAs": [
+					"https://wa.me/254721156350"
+				]
 			},
-
 			{
 				"@type": "ProfilePage",
 				"@id": "https://avenix.co.ke/about.html#page",
 				"url": "https://avenix.co.ke/about.html",
 				"name": "Seth Chenge, Founder and CEO of Avenix",
-				"mainEntity": { "@id": "https://avenix.co.ke/about.html#seth" },
-				"isPartOf": { "@id": "https://avenix.co.ke/#site" },
+				"description": "Avenix was founded in 2026 by Seth Chenge, who is the CEO. Learn about Seth Chenge and the Nairobi team behind OS installs, computer labs, Arduino robotics, IoT and V Chess.",
+				"mainEntity": {
+					"@id": "https://avenix.co.ke/about.html#seth"
+				},
+				"about": {
+					"@id": "https://avenix.co.ke/#org"
+				},
+				"isPartOf": {
+					"@id": "https://avenix.co.ke/#site"
+				},
+				"breadcrumb": {
+					"@id": "https://avenix.co.ke/about.html#breadcrumb"
+				},
+				"primaryImageOfPage": {
+					"@type": "ImageObject",
+					"url": "https://avenix.co.ke/assets/img/og-image.jpg",
+					"width": 1200,
+					"height": 630
+				},
 				"inLanguage": "en-KE"
 			},
-
 			{
 				"@type": "BreadcrumbList",
+				"@id": "https://avenix.co.ke/about.html#breadcrumb",
 				"itemListElement": [
 					{
 						"@type": "ListItem",
@@ -229,7 +302,6 @@
 					}
 				]
 			}
-
 		]
 	}
 	</script>
