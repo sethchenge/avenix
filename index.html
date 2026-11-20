@@ -587,110 +587,62 @@
 	<main id="main">
 
 
-		<!-- =================================================
-		     1. HERO SECTION
-		     Big headline on the left, artwork + floating chips on the right
-		     ================================================= -->
-		<section class="hero serif">
-			<div class="container">
-				<div class="row align-items-center g-5">
+<!-- =================================================
+     1. HERO SECTION (NEW)
+     In index.html, replace the whole old hero <section class="hero serif"> ... </section>
+     with this block. Then paste the <script> at the bottom of this file
+     just before </body>, AFTER <script src="main.js"></script>
+     ================================================= -->
+<section class="hero serif">
+	<div class="container">
+		<div class="row align-items-center g-5">
 
-					<!-- Hero text (left side) -->
-					<div class="col-lg-6">
+			<!-- Left: typed headline -->
+			<div class="col-lg-6">
 
-						<h1>We set up computers, networks and robots that just work.</h1>
+				<span class="hero-badge"><span class="dot"></span>Nairobi, Kenya. IT, robotics and networking</span>
 
-						<p class="lead mt-4">
-							Avenix is a small team in Nairobi. We install operating systems, build computer labs, fix machines and teach Arduino robotics. When you need a website or an app, we build that too.
-						</p>
+				<h1 aria-label="We set up computers, networks and robots that just work.">
+					<span aria-hidden="true">We set up <span class="typed-word" id="typedWord">computers</span><span class="cursor"></span> that just work.</span>
+				</h1>
 
-						<!-- Hero buttons -->
-						<div class="hero-cta d-flex flex-wrap gap-3 mt-4">
-							<a class="btn-main btn-big" href="services.html">See what we do</a>
-							<a class="btn-line btn-big" href="contact.html">Talk to us</a>
-						</div>
+				<p class="lead mt-4" id="typedLead">
+					Avenix is a small team in Nairobi. We install operating systems, build computer labs, fix machines and teach Arduino robotics. When you need a website or an app, we build that too.
+				</p>
 
+				<div class="hero-cta d-flex flex-wrap gap-3 mt-4">
+					<a class="btn-main btn-big" href="services.html">See what we do</a>
+					<a class="btn-line btn-big" href="contact.html">Talk to us</a>
+				</div>
+
+				<ul class="hero-trust">
+					<li><i class="bi bi-check2-circle"></i>Price agreed first</li>
+					<li><i class="bi bi-check2-circle"></i>Pay when you are happy</li>
+					<li><i class="bi bi-check2-circle"></i>M-Pesa accepted</li>
+				</ul>
+
+			</div>
+
+			<!-- Right: live terminal + floating tool chips -->
+			<div class="col-lg-6">
+				<div class="hero-art" aria-hidden="true">
+
+					<div class="term">
+						<div class="term-bar"><i></i><i></i><i></i><span>avenix@nairobi:~</span></div>
+						<div class="term-body" id="termBody"><div><span class="t-p">$</span> avenix install --os ubuntu</div></div>
 					</div>
 
-					<!-- Hero artwork (right side) -->
-					<div class="col-lg-6">
-						<div class="hero-art" aria-hidden="true">
-
-							<!-- Decorative blue and amber ribbons -->
-							<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
-								<defs>
-									<linearGradient id="gb" x1="0" y1="0" x2="1" y2="1">
-										<stop offset="0" stop-color="#2447A8"/>
-										<stop offset="1" stop-color="#4BA8DF"/>
-									</linearGradient>
-								</defs>
-								<path
-									class="ribbon-blue"
-									d="M90 50 C230 40 430 100 430 280 C350 210 240 190 90 50 Z"
-									fill="url(#gb)"
-								/>
-								<path
-									class="ribbon-amber"
-									d="M150 330 C250 290 420 320 400 430 C390 470 350 485 320 490 C360 430 320 370 150 330 Z"
-									fill="#EC6608"
-								/>
-							</svg>
-
-							<!-- Floating chip 1: VS Code -->
-							<div class="chip bx c1">
-								<img
-									src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/vscode/vscode-original.svg"
-									alt="VS Code logo"
-									width="28"
-									height="28"
-									loading="lazy"
-									onerror="this.remove()"
-								>VS Code
-							</div>
-
-							<!-- Floating chip 2: GitHub -->
-							<div class="chip bx c2">
-								<img
-									src="https://cdn.simpleicons.org/github"
-									alt="GitHub logo"
-									width="28"
-									height="28"
-									loading="lazy"
-									onerror="this.remove()"
-								>GitHub
-							</div>
-
-							<!-- Floating chip 3: Arduino -->
-							<div class="chip bx c3">
-								<img
-									src="https://cdn.simpleicons.org/arduino"
-									alt="Arduino logo"
-									width="28"
-									height="28"
-									loading="lazy"
-									onerror="this.remove()"
-								>Arduino
-							</div>
-
-							<!-- Floating chip 4: Ubuntu -->
-							<div class="chip bx c4">
-								<img
-									src="https://cdn.simpleicons.org/ubuntu"
-									alt="Ubuntu logo"
-									width="28"
-									height="28"
-									loading="lazy"
-									onerror="this.remove()"
-								>Ubuntu
-							</div>
-
-						</div>
-					</div>
+					<div class="chip bx c1"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/vscode/vscode-original.svg" alt="" width="28" height="28" loading="lazy" onerror="this.remove()">VS Code</div>
+					<div class="chip bx c2"><img src="https://cdn.simpleicons.org/github" alt="" width="28" height="28" loading="lazy" onerror="this.remove()">GitHub</div>
+					<div class="chip bx c3"><img src="https://cdn.simpleicons.org/arduino" alt="" width="28" height="28" loading="lazy" onerror="this.remove()">Arduino</div>
+					<div class="chip bx c4"><img src="https://cdn.simpleicons.org/ubuntu" alt="" width="28" height="28" loading="lazy" onerror="this.remove()">Ubuntu</div>
 
 				</div>
 			</div>
-		</section>
 
+		</div>
+	</div>
+</section>
 
 		<!-- =================================================
 		     2. SYSTEMS AND TOOLS WE WORK WITH
@@ -1478,6 +1430,78 @@
 
 	<!-- Our own JavaScript -->
 	<script src="main.js"></script>
+
+
+	<!-- =================================================
+     TYPING SCRIPT: paste before </body>, after main.js
+     ================================================= -->
+<script>
+(function () {
+	var word = document.getElementById('typedWord');
+	var lead = document.getElementById('typedLead');
+	var term = document.getElementById('termBody');
+	if (!word || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+	var wait = function (ms) { return new Promise(function (r) { setTimeout(r, ms); }); };
+
+	async function type(el, text, speed) {
+		for (var i = 0; i < text.length; i++) { el.textContent += text.charAt(i); await wait(speed); }
+	}
+
+	// 1. Rotating headline word
+	async function loopWords() {
+		var words = ['computers', 'networks', 'labs', 'robots'];
+		var i = 0;
+		word.textContent = '';
+		while (true) {
+			await type(word, words[i % words.length], 90);
+			await wait(1800);
+			while (word.textContent.length) { word.textContent = word.textContent.slice(0, -1); await wait(45); }
+			await wait(250);
+			i++;
+		}
+	}
+
+	// 2. Intro paragraph types once
+	async function typeLead() {
+		var full = lead.textContent.trim().replace(/\s+/g, ' ');
+		lead.style.minHeight = lead.offsetHeight + 'px';
+		lead.textContent = '';
+		await wait(900);
+		await type(lead, full, 14);
+	}
+
+	// 3. Terminal types commands, shows results, then loops
+	async function loopTerminal() {
+		var steps = [
+			['avenix install --os ubuntu', 'Ubuntu ready to use'],
+			['avenix setup lab --pcs 30', '30 machines cabled and imaged'],
+			['avenix flash robot.ino', 'Robot online and following the line'],
+			['avenix network --wifi office', 'Wi-Fi live in every room']
+		];
+		while (true) {
+			term.innerHTML = '';
+			for (var s = 0; s < steps.length; s++) {
+				var line = document.createElement('div');
+				line.innerHTML = '<span class="t-p">$</span> <span></span>';
+				term.appendChild(line);
+				await type(line.lastChild, steps[s][0], 38);
+				await wait(350);
+				var ok = document.createElement('div');
+				ok.className = 't-ok';
+				ok.textContent = '\u2714 ' + steps[s][1];
+				term.appendChild(ok);
+				await wait(700);
+			}
+			await wait(3200);
+		}
+	}
+
+	loopWords();
+	typeLead();
+	loopTerminal();
+})();
+</script>
 
 </body>
 </html>

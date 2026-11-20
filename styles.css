@@ -431,35 +431,187 @@ a {
 	font-size: .92rem;
 }
 
-
 /* =========================================================
-   06. HERO
+   06. HERO (NEW)
+   In styles.css, replace the whole old "06. HERO" block
+   (from .hero { ... down to .c4 { ... }) with this.
+   You can also delete the old .chip / .hero-art rules inside
+   section 16 (Phones), they are replaced below.
    ========================================================= */
 .hero {
+	position: relative;
+	isolation: isolate;
 	padding: clamp(2.5rem, 5vw, 5rem) 0 clamp(3rem, 6vw, 5rem);
 	min-height: calc(100vh - var(--nav-h));
 	display: flex;
 	align-items: center;
-	background: radial-gradient(60% 60% at 85% 20%, rgba(75, 168, 223, .16), transparent), #fff;
+	background: #fff;
 	overflow: hidden;
+}
+
+/* Soft blue grid that fades out toward the edges */
+.hero::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: -2;
+	background:
+		linear-gradient(var(--line) 1px, transparent 1px) 0 0 / 48px 48px,
+		linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0 / 48px 48px;
+	-webkit-mask-image: radial-gradient(65% 70% at 60% 40%, #000, transparent);
+	mask-image: radial-gradient(65% 70% at 60% 40%, #000, transparent);
+}
+
+/* Blue glow top right, amber glow bottom left */
+.hero::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	pointer-events: none;
+	background:
+		radial-gradient(45% 50% at 90% 10%, rgba(75, 168, 223, .25), transparent),
+		radial-gradient(35% 40% at 0% 100%, rgba(236, 102, 8, .12), transparent);
+}
+
+/* Small pill above the headline */
+.hero-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: .55rem;
+	font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+	font-weight: 600;
+	font-size: .85rem;
+	color: var(--ink);
+	padding: .35rem .9rem;
+	margin-bottom: 1.4rem;
+	background: #fff;
+	border: 2px solid;
+	border-color: var(--bd);
+	border-radius: 999px;
+}
+
+.hero-badge .dot {
+	width: 9px;
+	height: 9px;
+	border-radius: 50%;
+	background: #25D366;
+	box-shadow: 0 0 0 0 rgba(37, 211, 102, .6);
+	animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+	70%  { box-shadow: 0 0 0 9px rgba(37, 211, 102, 0); }
+	100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* Headline with typed word */
+.hero h1 {
+	font-size: clamp(2.3rem, 5vw, 4rem);
+	min-height: 3.5em;       /* stops the page jumping while words change */
+}
+
+.typed-word {
+	color: var(--blue);
+}
+
+.cursor {
+	display: inline-block;
+	width: 3px;
+	height: .85em;
+	margin-left: 3px;
+	background: var(--orange);
+	vertical-align: -.05em;
+	animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+	50% { opacity: 0; }
 }
 
 .hero p.lead {
 	font-size: 1.15rem;
 }
 
-/* Artwork box on the right */
-.hero-art {
-	position: relative;
-	aspect-ratio: 1;
-	max-width: 520px;
-	margin-inline: auto;
+/* Trust list under the buttons */
+.hero-trust {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	gap: .5rem 1.4rem;
+	padding: 0;
+	margin: 1.8rem 0 0;
+	font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+	font-weight: 600;
+	font-size: .9rem;
+	color: var(--ink);
 }
 
-.hero-art svg {
-	width: 100%;
-	height: 100%;
-	overflow: visible;
+.hero-trust i {
+	color: var(--blue);
+	margin-right: .35rem;
+}
+
+/* Right side: terminal window */
+.hero-art {
+	position: relative;
+	max-width: 540px;
+	margin-inline: auto;
+	padding: 2rem 0;
+}
+
+.term {
+	background: #0b1226;
+	border: 2px solid;
+	border-color: var(--bd);
+	border-radius: 16px;
+	box-shadow: 0 32px 60px -30px rgba(36, 71, 168, .7);
+	overflow: hidden;
+	font-family: ui-monospace, "Cascadia Code", Consolas, Menlo, monospace;
+	font-size: .95rem;
+	color: #d6e2ff;
+}
+
+.term-bar {
+	display: flex;
+	align-items: center;
+	gap: .4rem;
+	padding: .7rem 1rem;
+	background: #131c3a;
+	border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+
+.term-bar i {
+	width: 11px;
+	height: 11px;
+	border-radius: 50%;
+	background: #ff5f57;
+}
+
+.term-bar i:nth-child(2) { background: #febc2e; }
+.term-bar i:nth-child(3) { background: #28c840; }
+
+.term-bar span {
+	margin-left: .8rem;
+	font-size: .8rem;
+	color: #8e98b0;
+}
+
+.term-body {
+	padding: 1.2rem 1.2rem 1.4rem;
+	min-height: 17rem;
+	line-height: 1.9;
+	word-break: break-word;
+}
+
+.t-p {
+	color: var(--sky);
+	font-weight: 700;
+}
+
+.t-ok {
+	color: #4ade80;
+	padding-left: 1.1rem;
 }
 
 /* Floating chips (VS Code, GitHub, Arduino, Ubuntu) */
@@ -471,6 +623,7 @@ a {
 	padding: .5rem .8rem;
 	font-weight: 700;
 	font-size: .9rem;
+	animation: bob 5s ease-in-out infinite;
 }
 
 .chip img {
@@ -478,12 +631,25 @@ a {
 	height: 24px;
 }
 
-/* Chip positions */
-.c1 { top: 6%;     left: 0; }
-.c2 { top: 34%;    right: 0; }
-.c3 { bottom: 26%; left: 0; }
-.c4 { bottom: 6%;  right: 8%; }
+.c1 { top: -2%;    left: -5%; }
+.c2 { top: 22%;    right: -6%;  animation-delay: -1.2s; }
+.c3 { bottom: 14%; left: -7%;   animation-delay: -2.4s; }
+.c4 { bottom: -2%; right: 6%;   animation-delay: -3.6s; }
 
+@keyframes bob {
+	50% { transform: translateY(-9px); }
+}
+
+/* Phones */
+@media (max-width: 575.98px) {
+	.hero h1 { min-height: 4.6em; }
+	.hero-art { padding: 1.5rem 0; }
+	.term-body { font-size: .82rem; min-height: 14rem; }
+	.chip { font-size: .78rem; padding: .35rem .55rem; }
+	.c1 { left: 0; }
+	.c2 { right: 0; }
+	.c3 { left: 0; }
+}
 
 /* =========================================================
    07. TOOLS LINE  ("Systems and tools we work with")
